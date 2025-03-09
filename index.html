@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捐助此项目</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* 浅蓝色背景 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* 容器样式 */
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px; /* 增大容器宽度 */
+            width: 90%; /* 响应式宽度 */
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+            white-space: nowrap; /* 防止标题换行 */
+        }
+
+        /* 副标题样式 */
+        .subtitle {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+
+        /* 捐助按钮样式 */
+        .donation-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .donation-amount {
+            background-color: #4CAF50; /* 绿色 */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        .donation-amount:hover {
+            background-color: #45a049; /* 深绿色 */
+        }
+
+        /* 二维码区域样式 */
+        .qr-code {
+            margin-top: 20px;
+        }
+
+        .qr-code img {
+            width: 300px; /* 固定宽度 */
+            height: auto; /* 高度自适应，保持比例 */
+            aspect-ratio: 2 / 3; /* 保持 2:3 的长宽比 */
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .qr-code p {
+            font-size: 14px;
+            color: #555555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>捐助此项目，让这个公益项目持续运行</h1>
+        <p class="subtitle">您的支持将帮助我们做得更好！</p>
+        
+        <!-- 捐助金额选项 -->
+        <div class="donation-options">
+            <button class="donation-amount" data-amount="1" onclick="switchQRCode('ab6f1725cdf7f51f100157f40835908.jpg')">捐助 1 元</button>
+            <button class="donation-amount" data-amount="3" onclick="switchQRCode('d25c7ee9116e7225d95c9207e1beb13.jpg')">捐助 3 元</button>
+            <button class="donation-amount" data-amount="other" onclick="switchQRCode('978e0361f700bea5121290c7c8d4c68.jpg')">其他金额</button>
+        </div>
+
+        <!-- 二维码区域 -->
+        <div class="qr-code">
+            <p>请扫描下方二维码完成支付：</p>
+            <img id="qr-image" src="ab6f1725cdf7f51f100157f40835908.jpg" alt="支付二维码">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 函数：切换二维码图片
+        function switchQRCode(imageSrc) {
+            document.getElementById('qr-image').src = imageSrc;
+        }
+    </script>
+</body>
+</html>
